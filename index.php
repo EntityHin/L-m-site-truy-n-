@@ -114,7 +114,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center p-3 bg-dark text-white mt-4">
-        © 2025 Web Đọc Truyện - Nhóm 3
+        © Nhóm 1 - Web Đọc Truyện
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
