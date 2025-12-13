@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ | Web Đọc Truyện</title>
+    <title>Trang Chủ | Oath of Novels</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Web Đọc Truyện</a>
+            <a class="navbar-brand fw-bold" href="index.php">Oath of Novels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -38,10 +38,10 @@
 
             <div id="menu" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Thể Loại</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Đăng Nhập</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Đăng Ký</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="theloai.php">Thể Loại</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Đăng Nhập</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.php">Đăng Ký</a></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +50,7 @@
     <!-- BANNER -->
     <div class="container mt-4">
         <div class="p-4 bg-primary text-white rounded-3 shadow">
-            <h2 class="fw-bold">Chào mừng đến với Web Đọc Truyện</h2>
+            <h2 class="fw-bold">Chào mừng đến với Oath of Novels</h2>
             <p>Kho truyện phong phú, cập nhật liên tục mỗi ngày.</p>
         </div>
     </div>
@@ -66,7 +66,7 @@
                     <img src="https://i.imgur.com/Z7AzH2c.jpeg" class="card-img-top" alt="cover">
                     <div class="card-body p-2">
                         <h6 class="card-title text-truncate">Tên Truyện 1</h6>
-                        <a class="btn btn-sm btn-primary w-100" href="#">Đọc ngay</a>
+                        <a class="btn btn-sm btn-primary w-100" href="http://entityhin.free.nf/doan/detail.php">Đọc ngay</a>
                     </div>
                 </div>
             </div>
