@@ -1,0 +1,6 @@
+Mô hình quan hệ:
+USERS (<ins>user_id</ins>, username, password, email, full_name, role)
+ TRUYEN (<ins>truyen_id</ins>, tieu_de, tac_gia, mo_ta, anh_bia, trang_thai)
+CHUONG (<ins>chuong_id</ins>, ten_chuong, noi_dung, #truyen_id)
+BINH_LUAN (<ins>comment_id</ins>, noi_dung, ngay_tao, #user_id, #truyen_id)
+LICH_SU_DOC (<ins>id</ins>, thoi_gian, #user_id, #truyen_id, #chuong_id)
