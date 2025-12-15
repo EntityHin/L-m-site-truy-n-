@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thể Loại | Oath of Novels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f7f7f7; }
+        .story-card img { height: 220px; object-fit: cover; }
+        .category-card {
+            transition: all 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        .category-img {
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0d6efd;
+        }
+        .category-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .category-link:hover .category-card {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .nav-link.active { font-weight: bold; color: #fff !important; }
+        .btn-filter {
+            transition: all 0.3s;
+        }
+        .btn-filter:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">📚 Oath of Novels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="theloai.html">Thể Loại</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng Nhập</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Đăng Ký</a></li>
+                </ul>
+                
+                <form class="d-flex ms-3" action="index.html" method="GET">
+                    <input class="form-control me-2" type="search" name="search" placeholder="Tìm truyện...">
+                    <button class="btn btn-outline-light" type="submit">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item active">Thể loại</li>
+            </ol>
+        </nav>
+
+        <!-- Bộ lọc -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title mb-3">🔍 Lọc theo:</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-outline-primary btn-sm btn-filter active">Tất cả</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-filter">Mới nhất</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-filter">Hot nhất</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-filter">Hoàn thành</button>
+                    <button class="btn btn-outline-secondary btn-sm btn-filter">Đang ra</button>
+                    <div class="ms-auto">
+                        <select class="form-select form-select-sm" style="width: auto;">
+                            <option>Sắp xếp: Mặc định</option>
+                            <option>Sắp xếp: Mới nhất</option>
+                            <option>Sắp xếp: Lượt xem</option>
+                            <option>Sắp xếp: Đánh giá</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tất cả thể loại -->
+        <h2 class="section-title">📚 Tất cả thể loại</h2>
+        <div class="row g-4">
+            <!-- Thể loại 1 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#tien-hiep" class="category-link">
+                    <div class="card category-card shadow-sm border-primary">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/1N8zFqL.jpeg" class="card-img-top category-img" alt="Tiên Hiệp">
+                            <span class="category-badge">125 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">✨ Tiên Hiệp</h5>
+                            <p class="card-text small text-muted mt-1">Tu tiên đắc đạo, vũ trụ du hành</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 2 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#huyen-huyen" class="category-link">
+                    <div class="card category-card shadow-sm border-success">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/2KjL9Vf.jpeg" class="card-img-top category-img" alt="Huyền Huyễn">
+                            <span class="category-badge">98 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">🌌 Huyền Huyễn</h5>
+                            <p class="card-text small text-muted mt-1">Ma pháp, long tộc, dị giới</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 3 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#ngon-tinh" class="category-link">
+                    <div class="card category-card shadow-sm border-danger">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/3MjQpWr.jpeg" class="card-img-top category-img" alt="Ngôn Tình">
+                            <span class="category-badge">156 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">💖 Ngôn Tình</h5>
+                            <p class="card-text small text-muted mt-1">Tình yêu lãng mạn, ngọt ngào</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 4 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#kiem-hiep" class="category-link">
+                    <div class="card category-card shadow-sm border-warning">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/4NzXvLp.jpeg" class="card-img-top category-img" alt="Kiếm Hiệp">
+                            <span class="category-badge">87 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">⚔️ Kiếm Hiệp</h5>
+                            <p class="card-text small text-muted mt-1">Giang hồ, võ lâm, hiệp khách</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 5 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#xuyen-khong" class="category-link">
+                    <div class="card category-card shadow-sm border-info">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/5PqSdRt.jpeg" class="card-img-top category-img" alt="Xuyên Không">
+                            <span class="category-badge">112 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">🌀 Xuyên Không</h5>
+                            <p class="card-text small text-muted mt-1">Du hành thời gian, không gian</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 6 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#hoc-duong" class="category-link">
+                    <div class="card category-card shadow-sm border-secondary">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/6QrTyUs.jpeg" class="card-img-top category-img" alt="Học Đường">
+                            <span class="category-badge">76 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">🎓 Học Đường</h5>
+                            <p class="card-text small text-muted mt-1">Tuổi học trò, thanh xuân</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 7 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#hai-huoc" class="category-link">
+                    <div class="card category-card shadow-sm border-dark">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/7RsUvXp.jpeg" class="card-img-top category-img" alt="Hài Hước">
+                            <span class="category-badge">64 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">😂 Hài Hước</h5>
+                            <p class="card-text small text-muted mt-1">Tiếu điểm, giải trí</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Thể loại 8 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <a href="#kinh-di" class="category-link">
+                    <div class="card category-card shadow-sm border-dark">
+                        <div class="position-relative">
+                            <img src="https://i.imgur.com/8StVzYq.jpeg" class="card-img-top category-img" alt="Kinh Dị">
+                            <span class="category-badge">42 truyện</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">👻 Kinh Dị</h5>
+                            <p class="card-text small text-muted mt-1">Ma quỷ, ly kỳ, rùng rợn</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tiên Hiệp -->
+        <h2 id="tien-hiep" class="section-title mt-5">✨ Tiên Hiệp</h2>
+        <div class="row g-4">
+            <!-- Truyện 1 -->
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card story-card shadow-sm h-100">
+                    <img src="https://i.imgur.com/Z7AzH2c.jpeg" class="card-img-top" alt="Tu Tiên Đại Lộ">
+                    <div class="card-body p-3">
+                        <h6 class="card-title fw-bold text-truncate">Tu Tiên Đại Lộ</h6>
+                        <p class="card-text small text-muted mb-2">Chương 125</p>
+                        <a href="detail.html" class="btn btn-primary btn-sm w-100">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Truyện 2 -->
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card story-card shadow-sm h-100">
+                    <img src="https://i.imgur.com/M8J7P0o.jpeg" class="card-img-top" alt="Tiên Nghịch">
+                    <div class="card-body p-3">
+                        <h6 class="card-title fw-bold text-truncate">Tiên Nghịch</h6>
+                        <p class="card-text small text-muted mb-2">Chương 89</p>
+                        <a href="detail.html" class="btn btn-primary btn-sm w-100">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thêm nhiều truyện khác... -->
+        </div>
+
+        <!-- Huyền Huyễn -->
+        <h2 id="huyen-huyen" class="section-title mt-5">🌌 Huyền Huyễn</h2>
+        <div class="row g-4">
+            <!-- Truyện 1 -->
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card story-card shadow-sm h-100">
+                    <img src="https://i.imgur.com/vxZPppI.jpeg" class="card-img-top" alt="Thần Cấp Hệ Thống">
+                    <div class="card-body p-3">
+                        <h6 class="card-title fw-bold text-truncate">Thần Cấp Hệ Thống</h6>
+                        <p class="card-text small text-muted mb-2">Chương 156</p>
+                        <a href="detail.html" class="btn btn-primary btn-sm w-100">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thêm nhiều truyện khác... -->
+        </div>
+
+        <!-- Ngôn Tình -->
+        <h2 id="ngon-tinh" class="section-title mt-5">💖 Ngôn Tình</h2>
+        <div class="row g-4">
+            <!-- Truyện 1 -->
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card story-card shadow-sm h-100">
+                    <img src="https://i.imgur.com/w9YI5l3.jpeg" class="card-img-top" alt="Tình Yêu Vĩnh Cửu">
+                    <div class="card-body p-3">
+                        <h6 class="card-title fw-bold text-truncate">Tình Yêu Vĩnh Cửu</h6>
+                        <p class="card-text small text-muted mb-2">Chương 45</p>
+                        <a href="detail.html" class="btn btn-primary btn-sm w-100">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thêm nhiều truyện khác... -->
+        </div>
+
+        <!-- Phân trang -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Trang trước</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Trang sau</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center p-4 bg-dark text-white mt-5">
+        <div class="container">
+            <p class="mb-2">📚 Oath of Novels - Thiên đường truyện chữ</p>
+            <p class="mb-0">© 2024 Nhóm 1 - Web Đọc Truyện. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Active filter buttons
+        document.querySelectorAll('.btn-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.btn-filter').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-outline-secondary');
+                });
+                
+                this.classList.add('active');
+                this.classList.remove('btn-outline-secondary');
+                this.classList.add('btn-primary');
+            });
+        });
+        
+        // Smooth scroll to category
+        document.querySelectorAll('.category-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
