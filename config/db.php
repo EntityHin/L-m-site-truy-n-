@@ -1,8 +1,8 @@
 <?php
-$host = "sql108.infinityfree.com";
+$host = "localhost";
 $dbname = "if0_40292902_web_doc_truyen";
-$username = "if0_40292902";      // XAMPP mặc định
-$password = "Hin09634030661";          // XAMPP mặc định
+$username = "root";      // XAMPP mặc định
+$password = "";          // XAMPP mặc định
 
 try {
     $conn = new PDO(
