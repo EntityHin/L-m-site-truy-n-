@@ -80,7 +80,7 @@ $top_truyen = $sql_top->fetchAll();
 <!-- BANNER -->
 <div class="container mt-4">
     <div class="p-4 bg-primary text-white rounded-3 shadow">
-        <h2 class="fw-bold">Chào mừng đến với Oath of Novels</h2>
+        <h2 class="fw-bold">Chào mừng đến với Oath of Novels Trương Chấn Hưng</h2>
         <p>Kho truyện phong phú, cập nhật liên tục mỗi ngày.</p>
     </div>
 </div>
@@ -127,6 +127,7 @@ $top_truyen = $sql_top->fetchAll();
                         <h6 class="card-title text-truncate">
                             <?= htmlspecialchars($truyen['tieu_de']) ?>
                         </h6>
+                        
 
                         <a class="btn btn-sm btn-danger w-100"
                            href="detail.php?id=<?= $truyen['truyen_id'] ?>">
